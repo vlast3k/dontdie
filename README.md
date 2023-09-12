@@ -13,3 +13,8 @@ cf logs dontdie &
 while true; do sleep 1; date; curl "$URL"; done
 ```
 
+## Scenarios
+### Restart app instance
+```
+cf restart-app-instance dontdie 0
+```
