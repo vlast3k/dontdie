@@ -54,6 +54,8 @@ Wed Sep 13 02:35:11 AM UTC 2023 |  503 Service Unavailable: Requested route ('do
 * Eventually, in the same time a new instance will be started, before the first one died after it's `graceful shutdown time` expired, or the app decided to terminate before that.
 
 ## `cf restart`
+`cf restart` is doing as expected - removing the routes from `gorouter` and immediately starting new instances for the app
+
 Execute this to get the URL of the app, copy the output and execute it in another prompt
 ```
 echo export URL="$URL"
