@@ -15,7 +15,7 @@ export URL="https://$(cf curl /v3/apps/`cf app dontdie --guid`/routes | jq -r .r
 cf restart dontdie
 curl "$URL"
 cf restart-app-instance dontdie 0
-for i in {1..10}; do echo "$(date) |  $(curl -s "$URL")"; done
+while true; do sleep 1; echo "$(date) |  $(curl -s "$URL")"; done
 ```
 
 ### Output
