@@ -32,6 +32,31 @@ Wed Sep 13 02:35:11 AM UTC 2023 |  503 Service Unavailable: Requested route ('do
 Wed Sep 13 02:35:11 AM UTC 2023 |  503 Service Unavailable: Requested route ('dontdie.cert.cfapps.stagingaws.hanavlab.ondemand.com') has no available endpoints.
 ```
 
+### Expected Output
+```
+Restarting instance 0 of process web of app dontdie in org i024148 / space dev as provisioned_user_cf_admin...
+OK
+
+Fri Sep 15 02:46:20 AM UTC 2023 |  This could be a meaningful HTTP response coming from instance 1
+Fri Sep 15 02:46:21 AM UTC 2023 |  This could be a meaningful HTTP response coming from instance 1
+
+... up to <graceful_shutdown_time> + some reconciliation buffer only responses from "instance 1", but no errors
+
+Fri Sep 15 02:47:56 AM UTC 2023 |  This could be a meaningful HTTP response coming from instance 1
+Fri Sep 15 02:47:57 AM UTC 2023 |  This could be a meaningful HTTP response coming from instance 1
+Fri Sep 15 02:47:58 AM UTC 2023 |  This could be a meaningful HTTP response coming from instance 1
+Fri Sep 15 02:47:59 AM UTC 2023 |  This could be a meaningful HTTP response coming from instance 0
+Fri Sep 15 02:48:00 AM UTC 2023 |  This could be a meaningful HTTP response coming from instance 0
+Fri Sep 15 02:48:02 AM UTC 2023 |  This could be a meaningful HTTP response coming from instance 1
+Fri Sep 15 02:48:03 AM UTC 2023 |  This could be a meaningful HTTP response coming from instance 1
+Fri Sep 15 02:48:04 AM UTC 2023 |  This could be a meaningful HTTP response coming from instance 0
+Fri Sep 15 02:48:05 AM UTC 2023 |  This could be a meaningful HTTP response coming from instance 1
+Fri Sep 15 02:48:06 AM UTC 2023 |  This could be a meaningful HTTP response coming from instance 0
+Fri Sep 15 02:48:07 AM UTC 2023 |  This could be a meaningful HTTP response coming from instance 0
+Fri Sep 15 02:48:09 AM UTC 2023 |  This could be a meaningful HTTP response coming from instance 1
+Fri Sep 15 02:48:10 AM UTC 2023 |  This could be a meaningful HTTP response coming from instance 1
+```
+
 ### Analyze
 
 * `cf restart-app-instance` immediatelly tells the app to stop and the app goes into `graceful shutdown` mode
